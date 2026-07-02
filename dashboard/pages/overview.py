@@ -65,7 +65,4 @@ def render():
     summary['Total Return (%)'] = summary['Total Return (%)'].round(2)
     summary = summary.sort_values('Total Return (%)', ascending=False).reset_index(drop=True)
 
-    st.dataframe(
-        summary.style.background_gradient(subset=['Total Return (%)'], cmap='RdYlGn'),
-        use_container_width=True
-    )
+    st.dataframe(summary, use_container_width=True, height=560)
